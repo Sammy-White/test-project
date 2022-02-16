@@ -1,5 +1,11 @@
-body {
-  margin: 0;
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body{
+  background-image: linear-gradient(#081221, #03080f);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -8,6 +14,246 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.container{
+  width: 90%;
+  margin: 0 auto;
+}
+
+.content{
+  display: grid;
+  grid-template-columns: 30% 70%;
+  gap: 20px;
+}
+
+.sidebar{
+  background: #0e1a2b;
+  width: 100%;
+  height: fit-content;
+  padding: 20px;
+}
+
+.sidebar h3{
+  color: #ffffff;
+}
+
+.search_input  label {
+  font-size: 13px;
+  color: #ffffff;
+  font-weight: bolder;
+  text-transform: capitalize;
+}
+
+.search_input input {
+  width: 95%;
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  transition: all 0.2s ease-out; 
+  background-color: #182c47;
+  color: #c1d1e8;
+}
+
+.search_input  ::placeholder{
+  padding-left: 5px;
+  color: #c1d1e8;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.search_select{
+  padding-top: 30px;
+}
+
+.search_select label{
+  font-size: 13px;
+  color: #ffffff;
+  font-weight: bolder;
+  text-transform: capitalize;
+}
+
+/* Reset Select */
+.selected {
+  -webkit-appearance: none; 
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: none;
+  background-color: #182c47;
+  background-image: none;
+}
+/* Remove IE arrow */
+.selected::-ms-expand { 
+  display: none;
+}
+/* Custom Select */
+.select {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 3em;
+  line-height: 3;
+  border: none;
+  background-color: #182c47;
+  overflow: hidden;
+}
+.selected {
+  flex: 1;
+  padding: 0 .5em;
+  color: #c1d1e8;
+  cursor: pointer;
+}
+/* Arrow */
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  border-top: none;
+  border-right: none; 
+  background-color: #182c47;
+  color: #c1d1e8;
+  cursor: pointer;
+  pointer-events: none;
+  -webkit-transition: .25s all ease;
+  -o-transition: .25s all ease;
+  transition: .25s all ease;
+}
+/* Transition */
+.select:hover::after {
+  color: #c1d1e8;    
+}
+
+.sidebar  button {
+  width: fit-content;
+  padding: 15px 15px;
+  font-size: 14px;
+  text-transform: capitalize;
+  font-weight: bold;
+  background: #5692e8 ;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 15px;
+  transition: background 0.2s ease-out;
+  float: right;
+}
+
+.video_contents{
+  background: #0e1a2b;
+  width: 100%;
+  height: fit-content;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.video_card{
+  display: grid;
+  grid-template-columns: 200px 500px 100px;
+  gap: 10px;
+  align-items: center;
+}
+
+.video_img{
+  background-image: linear-gradient(to right, red , yellow);
+  width: 100%;
+  height: 180px;
+}
+
+.video_details{
+  padding: 0px 20px;
+  color: #ffffff;
+}
+
+.video_details p{
+  padding-top: 25px;
+}
+
+.rating{
+  width: fit-content; 
+  height: fit-content; 
+  background: #5692e8 ; 
+  border: none; 
+  border-radius: 50%; 
+  text-align: center; 
+  padding: 7px 8px;
+  color: #ffffff;
+  font-size: 12px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flex-container > div {
+padding-top:10px;
+}
+.paginate-ctn{
+    display: flex;
+}
+.round-effect{
+  color:#5692e8;
+  font-weight: bold;
+  cursor:pointer;
+  font-size:16px;
+  text-align:center;
+  padding-left:10px;
+  padding-right:10px;
+  padding-top:9px;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  margin:5px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  text-decoration: none;
+}
+
+.round-effect:hover{
+  text-decoration: none;
+  background:#5692e8;
+  color:#ffffff;
+}
+.round-effect:hover a {
+  text-decoration: none;
+  color:#ffffff;
+}
+
+.active{
+  background:#5692e8;
+  color:#ffffff;
+}
+.round-effect a:link {
+  text-decoration: none;
+  color:#5692e8;
+}
+
+.loading{
+  color: #ffffff;
+  text-align: center;
+}
+
+@media screen and (max-width: 840px) {
+  .content{
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 20px;
+}
+  .video_card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+} 
